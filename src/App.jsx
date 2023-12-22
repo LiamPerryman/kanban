@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
-import SigIn from "./pages/SignUp";
+
 import AppLayout from "./features/AppLayout";
 import SignUp from "./pages/SignUp";
 
@@ -31,7 +31,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <RouterProvider
+      className=" h-screen transition-all ease-in-out duration-300"
+      router={router}
+    ></RouterProvider>
+  );
 }
-
 export default App;

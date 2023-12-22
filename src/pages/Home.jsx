@@ -1,5 +1,7 @@
+import Button from "../features/Button";
+
 function Home() {
-  return <div>HOME</div>;
+  return <div></div>;
 }
 
 export default Home;
