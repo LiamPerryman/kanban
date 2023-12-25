@@ -1,5 +1,5 @@
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { useState } from "react";
+import { Navigate, RouterProvider, createBrowserRouter, useParams } from "react-router-dom";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
@@ -15,12 +15,12 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />,
       },
       {
         index: true,
-        element: <Navigate to="/" replace />,
+        element: <Navigate to="/home" />,
       },
       {
         path: "/login",
