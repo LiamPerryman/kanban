@@ -1,22 +1,26 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 
 import AppLayout from "./features/AppLayout";
 import SignUp from "./pages/SignUp";
+import DashboardLayout from "./features/DashboardLayout";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+
     children: [
       {
         path: "/",
         element: <Home />,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard />,
+        index: true,
+        element: <Navigate to="/" replace />,
       },
       {
         path: "/login",
@@ -28,14 +32,24 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+    ],
+  },
 ]);
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <RouterProvider
-      className=" h-screen transition-all ease-in-out duration-300"
-      router={router}
-    ></RouterProvider>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
   );
 }
 export default App;

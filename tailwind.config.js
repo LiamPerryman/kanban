@@ -7,6 +7,25 @@ export default module.exports = {
       fontFamily: {
         sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
       },
+      height: {
+        dashboardTop: "5.7rem",
+      },
+      keyframes: {
+        kanbanLoader: {
+          "0%,100%": {
+            transform: " scale(0)",
+            opacity: "0",
+          },
+          "50%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+        },
+      },
+
+      animation: {
+        kanbanLoader: "kanbanLoader 1s ease-in-out infinite",
+      },
     },
     colors: {
       mainPurple: "#635FC7",
