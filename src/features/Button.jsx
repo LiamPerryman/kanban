@@ -10,7 +10,7 @@ function Button({ onClick, text, size, type, children }) {
       : " text-white hover:bg-redHover bg-red";
   return (
     <button
-      className={`${buttonColor} lg:max-w-60  rounded-full w-full text-center justify-center gap-2 items-center ${buttonSize}`}
+      className={`${buttonColor} max-w-60  rounded-full w-full text-center justify-center gap-2 items-center ${buttonSize}`}
       onClick={onClick}
     >
       {text}

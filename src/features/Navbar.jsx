@@ -16,8 +16,8 @@ function Navbar() {
   const loginPage = pathname.includes("login");
   return (
     <nav
-      className={`relative   flex flex-row items-center justify-between px-10 w-full h-dashboardTop border-b-[1px]  ${
-        darkMode ? " border-linesDark" : "border-linesLight"
+      className={`fixed flex flex-row items-center justify-between px-8 w-full h-dashboardTop transition-none border-b-[1px] overflow-hidden z-40 ${
+        darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"
       }  ${loginPage && "border-none"}  `}
     >
       <img

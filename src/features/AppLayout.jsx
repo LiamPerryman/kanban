@@ -18,15 +18,8 @@ function AppLayout() {
         setClicked,
       }}
     >
-      <div
-        className={`h-svh ${clicked && "overflow-hidden"}  ${
-          darkMode ? "bg-darkGrey" : "bg-white"
-        } `}
-      >
-        <Navbar />
-
-        <Outlet />
-      </div>
+      <Navbar />
+      <Outlet />
     </AppContext.Provider>
   );
 }
