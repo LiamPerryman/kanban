@@ -5,7 +5,7 @@ function Dashboard() {
   const { visible, darkMode } = useContext(DashboardContext);
   return (
     <div
-      className={`h-screen w-9/12 transition-none  max-lg:w-full ${
+      className={`h-full  ${visible ? "w-9/12" : "w-full"} transition-none   max-lg:w-full ${
         darkMode ? "bg-veryDarkGrey" : " bg-lightGreyLightBG"
       } `}
     ></div>

@@ -1,12 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DashboardContext } from "./DashboardLayout";
 import { LogoDark, LogoLight } from "../utils/imageExport";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-import { HiDotsVertical } from "react-icons/hi";
+import EditDashboard from "./EditDashboard";
+
 function DashboardNavbar() {
+  const [windowSize, setWindowSize] = useState(800);
   const { darkMode, setVisible, visible } = useContext(DashboardContext);
   const navigate = useNavigate();
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
     <div
       className={`h-dashboardTop  flex flex-row-reverse   ${
@@ -14,7 +23,7 @@ function DashboardNavbar() {
       } `}
     >
       <div
-        className={` h-full  w-9/12    border-b-[1px]  flex flex-row justify-between items-center px-6   ${
+        className={` h-full  w-9/12  max-lg:w-full   border-b-[1px]  flex flex-row justify-between items-center px-6 gap-5  ${
           darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"
         }  `}
       >
@@ -23,10 +32,10 @@ function DashboardNavbar() {
             Platform Launch
           </h1>
         </div>
-        <div className="flex flex-row justify-end items-center  w-full gap-5">
-          <Button text={"+ Add New Task"} type={"primary"} size={"lg"} />
+        <div className="flex flex-row justify-end items-center  w-full max-sm:w-32 gap-5">
+          <Button text={windowSize > 700 ? "+ Add New Task" : "+"} type={"primary"} size={"sm"} />
           <div>
-            <HiDotsVertical className={`text-mediumGrey hover:cursor-pointer`} size={25} />
+            <EditDashboard />
           </div>
         </div>
       </div>
