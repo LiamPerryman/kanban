@@ -7,7 +7,7 @@ import EditDashboard from "./EditDashboard";
 
 function DashboardNavbar() {
   const [windowSize, setWindowSize] = useState(800);
-  const { darkMode, setVisible, visible } = useContext(DashboardContext);
+  const { darkMode, visible } = useContext(DashboardContext);
   const navigate = useNavigate();
   useEffect(() => {
     const handleWindowResize = () => {

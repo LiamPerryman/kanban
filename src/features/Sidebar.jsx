@@ -1,25 +1,27 @@
 import { useContext } from "react";
 import { DashboardContext } from "./DashboardLayout";
 import SidebarDarkButton from "./SidebarDarkButton";
-import HideSidebar from "./HideSidebar";
 
 function Sidebar() {
   const { darkMode, visible } = useContext(DashboardContext);
 
   return (
     <div
-      className={`h-full max-lg:hidden  transition-all  flex flex-col  justify-between   relative   ${
-        visible ? "w-3/12 px-5" : "w-0 "
-      }   border-r-[1px]  ${
-        darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"
-      }`}
+      className={`min-h-[calc(100vh-5.7rem)] fixed  w-[25vw]    ${
+        visible ? " col-start-1" : " -translate-x-full"
+      } max-lg:hidden transition-transform  duration-500  flex flex-col  justify-between    
+    px-5
+        border-r-[1px]  ${
+          darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"
+        }`}
     >
-      <div className="px-5">
-        <h2 className=" text-headingXl font-medium mt-5 text-mediumGrey  ">ALL BOARDS ( {1} )</h2>
+      <div className={`px-5 `}>
+        <h2 className=" text-headingXl font-medium mt-5 text-mediumGrey transition-opacity duration-700  ">
+          ALL BOARDS ( {1} )
+        </h2>
       </div>
       <div className="">
         <SidebarDarkButton />
-        <HideSidebar />
       </div>
     </div>
   );

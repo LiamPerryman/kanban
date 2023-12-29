@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { AppContext } from "./AppLayout";
 import NavbarButtons from "./NavbarButtons";
+import NavLinkButton from "./NavLinkButton";
 
 function MobileMenu() {
   const { clicked, setClicked, darkMode } = useContext(AppContext);
@@ -26,33 +26,15 @@ function MobileMenu() {
                 darkMode ? " border-linesDark" : "border-linesLight"
               }`}
             >
-              <NavLink
-                to={"/"}
-                className={`text-headingXl   transition-colors ease-in-out duration-300 ${
-                  darkMode
-                    ? "text-white  hover:text-mainPurple "
-                    : "text-mainPurple hover:text-linesDark "
-                } `}
-              >
-                Home
-              </NavLink>
+              {" "}
+              <NavLinkButton text={"Home"} to={"/"} />
             </li>
             <li
               className={` w-full border-b-2 pb-5   ${
                 darkMode ? " border-linesDark" : "border-linesLight"
               }`}
             >
-              {" "}
-              <NavLink
-                to={"/dashboard"}
-                className={`text-headingXl transition-colors ease-in-out duration-300   ${
-                  darkMode
-                    ? "text-white  hover:text-mainPurple"
-                    : "text-mainPurple  hover:text-linesDark"
-                }  `}
-              >
-                Dashboard
-              </NavLink>
+              <NavLinkButton text={"Dashboard"} to={"/dashboard"} />
             </li>
           </ul>
         </div>

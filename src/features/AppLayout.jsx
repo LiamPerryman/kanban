@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import Navbar from "./Navbar";
 
 export const AppContext = createContext();
@@ -10,14 +10,18 @@ function AppLayout() {
   const [clicked, setClicked] = useState(false);
   return (
     <AppContext.Provider
-      value={{
-        darkMode,
-        setDarkMode,
-        pathname,
-        clicked,
-        setClicked,
-      }}
+      value={useMemo(
+        () => ({
+          darkMode,
+          setDarkMode,
+          pathname,
+          clicked,
+          setClicked,
+        }),
+        [clicked, darkMode, pathname]
+      )}
     >
+      {" "}
       <Navbar />
       <Outlet />
     </AppContext.Provider>

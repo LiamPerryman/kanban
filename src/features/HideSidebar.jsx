@@ -4,21 +4,22 @@ import { FaEyeSlash } from "react-icons/fa";
 function HideSidebar() {
   const { visible, setVisible, darkMode } = useContext(DashboardContext);
   return (
-    <div
+    <button
       onClick={() => setVisible((show) => !show)}
       className={` w-full  text-mediumGrey  ${
         darkMode ? "hover:text-white" : "hover:text-black"
-      } hover:cursor-pointer transition-colors flex flex-row items-center gap-5 -translate-y-12 `}
+      } hover:cursor-pointer  flex flex-row items-center gap-5 fixed bottom-0 h-16 -translate-y-12
+      } `}
     >
       <div
         className={`flex flex-row justify-center items-center gap-5  ${
-          !visible && "h-16 w-16 transition-all hover:w-32  bg-mainPurple fixed rounded-r-full "
-        }`}
+          !visible && "h-16 w-16 transition-all hover:w-32  bg-mainPurple  rounded-r-full "
+        } ${visible && "px-5"}`}
       >
         <FaEyeSlash size={20} />
         <h2 className={`text-headingLg font-semibold ${!visible && "hidden"}`}>Hide Sidebar</h2>
       </div>
-    </div>
+    </button>
   );
 }
 
