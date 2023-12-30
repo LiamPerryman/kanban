@@ -7,9 +7,9 @@ function Sidebar() {
 
   return (
     <div
-      className={`min-h-[calc(100vh-5.7rem)] fixed  w-[25vw]    ${
+      className={`min-h-[calc(100vh-5.7rem)] fixed  w-[25vw] z-30   ${
         visible ? " col-start-1" : " -translate-x-full"
-      } max-lg:hidden transition-transform  duration-500  flex flex-col  justify-between    
+      } max-lg:hidden transition-transform  duration-700  flex flex-col  justify-between    
     px-5
         border-r-[1px]  ${
           darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"

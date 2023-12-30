@@ -6,7 +6,7 @@ function HideSidebar() {
   return (
     <button
       onClick={() => setVisible((show) => !show)}
-      className={` w-full  text-mediumGrey  ${
+      className={`  text-mediumGrey z-50 max-lg:hidden  ${
         darkMode ? "hover:text-white" : "hover:text-black"
       } hover:cursor-pointer  flex flex-row items-center gap-5 fixed bottom-0 h-16 -translate-y-12
       } `}

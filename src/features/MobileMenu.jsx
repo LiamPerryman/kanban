@@ -1,17 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppLayout";
 import NavbarButtons from "./NavbarButtons";
 import NavLinkButton from "./NavLinkButton";
+import useResize from "../hooks/useResize";
 
 function MobileMenu() {
   const { clicked, setClicked, darkMode } = useContext(AppContext);
 
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth > 1024) setClicked(false);
-    }
-    window.addEventListener("resize", handleResize);
-  });
+  useResize(setClicked);
+
   return (
     clicked && (
       <div
