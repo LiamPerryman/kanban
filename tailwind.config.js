@@ -9,6 +9,10 @@ export default module.exports = {
       },
       height: {
         dashboardTop: "5.7rem",
+        deleteHeight: "14.3125rem",
+      },
+      width: {
+        deleteWidth: "30rem",
       },
       keyframes: {
         kanbanLoader: {
@@ -31,7 +35,7 @@ export default module.exports = {
         headingLg: ["1.125rem", { lineHeight: "1.4375rem", fontWeight: "700" }],
         headingM: ["1rem", { lineHeight: "1.1875rem", fontWeight: "700" }],
         headingS: [".75rem", { lineHeight: "1rem", lineSpacing: ".25rem", fontWeight: "700" }],
-        bodyLg: [".8125rem", { lineHeight: "1.875rem", fontWeight: "500" }],
+        bodyLg: [".875rem", { lineHeight: "1.4375rem", fontWeight: "500" }],
         bodyM: [".75rem", { lineHeight: "1rem", fontWeight: "700" }],
       },
     },

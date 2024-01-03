@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { AppContext } from "./AppLayout";
+
 import { NavLink } from "react-router-dom";
+import { AppContext } from "../App";
 
 function NavLinkButton({ text, to }) {
   const { darkMode, setClicked } = useContext(AppContext);

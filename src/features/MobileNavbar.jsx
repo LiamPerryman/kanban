@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import MenuButton from "./MenuButton";
-import { AppContext } from "./AppLayout";
+
 import Modal from "./Modal";
 import MobileMenu from "./MobileMenu";
+import { AppContext } from "../App";
 
 function MobileNavbar() {
   const { clicked, setClicked } = useContext(AppContext);

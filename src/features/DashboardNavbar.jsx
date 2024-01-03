@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { DashboardContext } from "./DashboardLayout";
+
 import { LogoDark, LogoLight } from "../utils/imageExport";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import EditDashboard from "./EditDashboard";
+import { AppContext } from "../App";
 
 function DashboardNavbar() {
   const [windowSize, setWindowSize] = useState(800);
-  const { darkMode, visible } = useContext(DashboardContext);
+  const { darkMode, visible } = useContext(AppContext);
   const navigate = useNavigate();
   useEffect(() => {
     const handleWindowResize = () => {
@@ -18,7 +19,7 @@ function DashboardNavbar() {
 
   return (
     <div
-      className={`h-dashboardTop  flex flex-row-reverse   ${
+      className={`h-dashboardTop   flex flex-row-reverse   ${
         darkMode ? " bg-darkGrey" : " bg-white"
       } `}
     >
@@ -46,7 +47,7 @@ function DashboardNavbar() {
       >
         <img
           className="hover:cursor-pointer"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
           src={darkMode ? LogoLight : LogoDark}
           alt=""
         />

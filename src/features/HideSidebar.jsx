@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { DashboardContext } from "./DashboardLayout";
 import { FaEyeSlash } from "react-icons/fa";
+import { AppContext } from "../App";
 function HideSidebar() {
-  const { visible, setVisible, darkMode } = useContext(DashboardContext);
+  const { visible, setVisible, darkMode } = useContext(AppContext);
   return (
     <button
       onClick={() => setVisible((show) => !show)}

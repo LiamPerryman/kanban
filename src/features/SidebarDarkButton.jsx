@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { DashboardContext } from "./DashboardLayout";
 import { MdOutlineDarkMode, MdSunny } from "react-icons/md";
+import { AppContext } from "../App";
 function SidebarDarkButton() {
-  const { darkMode, setDarkMode } = useContext(DashboardContext);
+  const { darkMode, setDarkMode } = useContext(AppContext);
   return (
     <div
       className={`flex flex-row h-20   rounded-xl justify-center items-center gap-8 mb-32  ${

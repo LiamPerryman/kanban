@@ -1,28 +1,27 @@
 import { useContext } from "react";
 import { LogoDark, LogoLight } from "../utils/imageExport";
-import { AppContext } from "./AppLayout";
 
 import { MdOutlineDarkMode, MdSunny } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
 import NavbarButtons from "./NavbarButtons";
+import { AppContext } from "../App";
 
 function Navbar() {
   const navigate = useNavigate();
   const { setDarkMode, darkMode } = useContext(AppContext);
-  const { pathname } = useContext(AppContext);
-
+  const { pathname } = useLocation();
   const loginPage = pathname.includes("login");
   return (
     <nav
-      className={` flex flex-row items-center justify-between px-8 w-full h-dashboardTop transition-none border-b-[1px]  z-50 ${
+      className={` flex flex-row items-center justify-between px-8 w-full h-dashboardTop  border-b-[1px]  z-50 ${
         darkMode ? " border-linesDark bg-darkGrey" : "border-linesLight bg-white"
       }  ${loginPage && "border-none"}  `}
     >
       <img
-        onClick={() => navigate("/dashboard")}
-        className="hover:cursor-pointer  z-30"
+        onClick={() => navigate("/")}
+        className="hover:cursor-pointer  z-30 "
         src={darkMode ? LogoLight : LogoDark}
         alt="Kanban Logo"
       />

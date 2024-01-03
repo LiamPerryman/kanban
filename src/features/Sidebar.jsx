@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { DashboardContext } from "./DashboardLayout";
 import SidebarDarkButton from "./SidebarDarkButton";
+import { AppContext } from "../App";
 
 function Sidebar() {
-  const { darkMode, visible } = useContext(DashboardContext);
+  const { darkMode, visible } = useContext(AppContext);
 
   return (
     <div

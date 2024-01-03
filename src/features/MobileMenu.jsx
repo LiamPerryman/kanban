@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { AppContext } from "./AppLayout";
+
 import NavbarButtons from "./NavbarButtons";
 import NavLinkButton from "./NavLinkButton";
 import useResize from "../hooks/useResize";
+import { AppContext } from "../App";
 
 function MobileMenu() {
   const { clicked, setClicked, darkMode } = useContext(AppContext);

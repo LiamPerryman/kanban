@@ -1,14 +1,15 @@
 import { useContext } from "react";
-import { AppContext } from "../features/AppLayout";
+
 import Button from "../features/Button";
+import { AppContext } from "../App";
 
 function Home() {
-  const { darkMode, clicked } = useContext(AppContext);
+  const { darkMode } = useContext(AppContext);
   return (
     <div
-      className={` min-h-[calc(100vh-5.7rem)]  w-full flex flex-col justify-center overflow-scroll  pattern-graph-mediumGrey/5  pattern-topography-scale-[.3]  items-center transition-none ${
-        clicked && "hidden"
-      } ${darkMode ? "bg-darkGrey" : "bg-white"}    `}
+      className={` min-h-[calc(100vh-5.7rem)]   w-full flex flex-col justify-center overflow-scroll  pattern-graph-mediumGrey/5  pattern-topography-scale-[.3]  items-center   ${
+        darkMode ? "bg-darkGrey" : "bg-white"
+      }    `}
     >
       <div className="h-full  flex flex-col  items-center  ">
         <header className="  sm:w-3/5 2xl:w-[900px] sm:p-0 px-4 w-full  text-center mb-10 ">
