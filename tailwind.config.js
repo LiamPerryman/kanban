@@ -54,5 +54,5 @@ export default module.exports = {
       redHover: "#FF9898",
     },
   },
-  plugins: [require("tailwindcss-patterns")],
+  plugins: [require("tailwindcss-patterns"), require("tailwind-scrollbar")({ nocompatible: true })],
 };

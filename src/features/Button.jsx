@@ -1,6 +1,6 @@
 function Button({ onClick, text, size, type, children }) {
   const buttonSize =
-    size?.toLowerCase() === "lg" ? " h-[3rem] text-headingM" : "h-[2.5rem] font-bold text-sm ";
+    size?.toLowerCase() === "lg" ? " h-[3rem] text-headingM " : "h-[2.5rem] font-bold text-sm ";
   const buttonType = type?.toLowerCase();
   const buttonColor =
     buttonType === "secondary"
@@ -10,7 +10,8 @@ function Button({ onClick, text, size, type, children }) {
       : " text-white hover:bg-redHover bg-red";
   return (
     <button
-      className={`${buttonColor} max-w-60  rounded-full w-full text-center justify-center gap-2 items-center ${buttonSize}`}
+      className={` flex flex-col${buttonColor} max-w-60     rounded-full w-full text-center justify-center
+       items-center ${buttonSize}`}
       onClick={onClick}
     >
       {text}

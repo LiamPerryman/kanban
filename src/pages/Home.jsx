@@ -7,7 +7,7 @@ function Home() {
   const { darkMode } = useContext(AppContext);
   return (
     <div
-      className={` min-h-[calc(100vh-5.7rem)]   w-full flex flex-col justify-center overflow-scroll  pattern-graph-mediumGrey/5  pattern-topography-scale-[.3]  items-center   ${
+      className={` min-h-[calc(100vh-5.7rem)]   w-full flex flex-col justify-center   pattern-graph-mediumGrey/5  pattern-topography-scale-[.3]  items-center   ${
         darkMode ? "bg-darkGrey" : "bg-white"
       }    `}
     >

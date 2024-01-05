@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap");
 
 @layer base {
   button,
@@ -9,5 +9,3 @@
     @apply transition-all ease-linear duration-300;
   }
 }
-
-::-webki ;

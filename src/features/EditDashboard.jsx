@@ -1,35 +1,41 @@
-import { useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { HiDotsVertical } from "react-icons/hi";
-import Modal from "./Modal";
 import DeleteBoard from "./DeleteBoard";
+import { AppContext } from "../App";
+import useOnOutsideClick from "../hooks/useOnOutsideClick";
 function EditDashboard() {
-  const [clicked, setClicked] = useState(false);
+  const { darkMode } = useContext(AppContext);
+  const [clicked, setClicked] = useState(true);
   const [deleteBoard, setDeleteBoard] = useState(false);
+  const ref = useRef();
   function handleSetDeleteBoard() {
     setDeleteBoard(true);
     setClicked(false);
   }
+  useOnOutsideClick(setClicked, ref);
   return (
-    <div className="relative">
+    <div className="relative ">
       <HiDotsVertical
         onClick={() => setClicked((clicked) => !clicked)}
         className={`text-mediumGrey hover:cursor-pointer`}
         size={25}
       />
 
-      <Modal>
-        <div
-          className={`${
-            !clicked && "hidden"
-          } absolute right-12 top-0 translate-y-20 h-32 w-48 rounded-xl p-5 flex flex-col justify-center  items-start gap-5 bg-linesLight`}
-        >
-          <button className=" text-headingM text-mediumGrey">Edit Board</button>
-          <button onClick={handleSetDeleteBoard} className=" text-headingM text-red">
-            Delete Board
-          </button>
-        </div>
-      </Modal>
-      {deleteBoard && <DeleteBoard />}
+      <div
+        ref={ref}
+        className={` outline-5 outline  outline-mediumGrey/10 ${
+          !clicked && "hidden"
+        } absolute h-32 w-48 rounded-xl p-5 flex flex-col justify-center z-40 right-5 top-10  items-start gap-5 ${
+          darkMode ? " bg-darkGrey" : "bg-white"
+        } `}
+      >
+        <button className=" text-headingM text-mediumGrey">Edit Board</button>
+        <button onClick={handleSetDeleteBoard} className=" text-headingM text-red">
+          Delete Board
+        </button>
+      </div>
+
+      {deleteBoard && <DeleteBoard setOpen={setDeleteBoard} />}
     </div>
   );
 }
